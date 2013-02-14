@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class ItemsController < ApplicationController #controller is front end focused
   # GET /items
   # GET /items.json
   def index

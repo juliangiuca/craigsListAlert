@@ -2,8 +2,9 @@
   
 class CraigsListScraper
 
-  def initialize(url)
-    @data = Nokogiri::HTML(open(url))
+  def initialize(criteria)
+    @criteria = criteria
+    @data = Nokogiri::HTML(open(@criteria.url))
   end
   
   def get_data
@@ -28,8 +29,8 @@ class CraigsListScraper
 
 
   def add_data(url, title, price, location)
-    item = Item.new(:url => url, :title => title, :price => price, :location => location)
-    item.save
+    item = @criteria.items.create!(:url => url, :title => title, :price => price, :location => location)
+    
   end
 end
 
