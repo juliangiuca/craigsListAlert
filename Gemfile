@@ -28,6 +28,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'debugger'
+gem "rails-bookmarklet", :git => "https://github.com/oliverfriedmann/rails-bookmarklet.git"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

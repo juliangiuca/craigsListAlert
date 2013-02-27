@@ -1,3 +1,45 @@
+table
+{
+border-collapse:collapse;
+width:100%;
+}
+
+table,th,td
+{
+border:1px solid black;
+padding:5px;
+font-family:courier,monospace;
+font-size:small;
+font-weight: bold;
+text-align: center;
+}
+
+th
+{
+  padding:8px;
+  font-size: large;
+}
+
+.remove
+{
+  border-color: white;
+  text-align: left;
+}
+
+h1
+{
+text-align:center;
+padding: 30px;
+font-family: courier,monospace;
+}
+
+.new_search
+{
+  font-family:courier,monospace;
+  padding: 10px;
+  font-size: small;
+}
+
 // Place all the styles related to the criteria controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/

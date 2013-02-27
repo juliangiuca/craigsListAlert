@@ -6,9 +6,13 @@ CraigsListAlert::Application.routes.draw do
 
   resources :items
   resources :criterias
+  resources :bookmarklet
 
+root :to => "home#index"
+  #devise_for :user do
+    #root :to => 'devise/sessions#new'
+ # end
 
-  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
