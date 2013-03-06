@@ -8,16 +8,18 @@
     <th class="remove"></th>
   </tr>
 
-<% @criterias.each do |criteria| %>
+  <% @criterias.each do |criteria| %>
   <tr>
     <td><%= criteria.title %></td>
     <td><%= criteria.url %></td>
     <td><%= criteria.created_at %></td>
     <td class="remove"><%= link_to 'Remove', criteria, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
-<% end %>
+  <% end %>
 </table>
 
 <br />
 
 <div class="new_search"> <%= link_to 'New Search', new_criteria_path %> <div>
+
+<p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>       
