@@ -10,15 +10,14 @@ CraigsListAlert::Application.routes.draw do
 
   match 'bookmarklets/js' => 'bookmarklets#js'
 
-  devise_for :users, :skip => [:sessions]
-  as :user do
-    get 'signin' => 'devise/sessions#new', :as => :new_user_session
-    post 'signin' => 'devise/sessions#create', :as => :user_session
-    get 'signup' => 'bookmarklet#index'
-    delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
-  end
+ # devise_for :users, :skip => [:sessions]
+ # as :user do
+  #   get 'signin' => 'devise/sessions#new', :as => :new_user_session
+  #   post 'signin' => 'devise/sessions#create', :as => :user_session
+  #   delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
   
-  root :to => "home#index"
+  root :to => "criterias#index"
 
   #devise_for :user do
     #root :to => 'devise/sessions#new'

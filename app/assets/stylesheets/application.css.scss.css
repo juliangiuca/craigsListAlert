@@ -13,7 +13,7 @@
 div
 {
 	font-family: courier,monospace;
-	padding:5px;
+	padding:2px;
 	text-align: center;
 }
 
@@ -60,7 +60,7 @@ th
 h1
 {
 text-align:center;
-padding: 30px;
+padding: 20px;
 font-family: courier,monospace;
 }
 
@@ -71,6 +71,15 @@ font-family: courier,monospace;
   font-size: small;
 }
 
+#first {
+float: left;
+padding-right: 30px;
+padding-left: 30px;
+}
+
+#second {
+float: left;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
