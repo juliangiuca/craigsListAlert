@@ -17,8 +17,8 @@ class BookmarkletController < ApplicationController
 
  # end
 
-  #def js
-    #render :file => "bookmarklets/js", :content_type => Mime::JS, :layout => false
-  #end
+  def js
+    render :file => "bookmarklet/js", :content_type => Mime::JS, :layout => false #Mime is the type of file
+  end
 
 end

@@ -1,3 +1,5 @@
+<% if @criterias.present? %> 
+
 <h1>Saved Searches</h1>
 
 <table >
@@ -23,3 +25,13 @@
 <div class="new_search"> <%= link_to 'New Search', new_criteria_path %> <div>
 
 <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>       
+
+<%else%>
+
+<div class="wrapper">
+<div id="first" class="bookmark"><%= link_to(image_tag("favorite.png", :size => "50x50"), bookmarklet_link_url)%></div> 
+<div id="second"><h2> Drag this bookmarklet to your browser and start saving your searches</h2></div>
+</div>
+
+<%end%>
+<%#link_to holds image_tag which holds images that is linked to js%>

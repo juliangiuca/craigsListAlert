@@ -6,9 +6,8 @@ CraigsListAlert::Application.routes.draw do
 
   resources :items
   resources :criterias
-  resources :bookmarklet
 
-  match 'bookmarklets/js' => 'bookmarklets#js'
+  match 'bookmarklet/js' => 'bookmarklet#js'
 
  # devise_for :users, :skip => [:sessions]
  # as :user do

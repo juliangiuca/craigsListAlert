@@ -1,19 +1,5 @@
 class ApplicationController < ActionController::Base
 	protect_from_forgery
-	before_filter :authenticate_user!
-
-
-
-	# def stored_location_for(resource)
-	# 	nil
-	# end
-
-	# def after_sign_in_path_for(resource)
-	# 	criterias_path
-	# end
-
-	# def after_sign_up_path_for(resource)
-	# 	bookmarklet_path
-	# end
+	before_filter :authenticate_user! #Before filters may halt the request cycle. A common before filter is one which requires that a user is logged in for an action to be run. 
 
 end

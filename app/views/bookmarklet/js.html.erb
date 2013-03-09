@@ -1,16 +1,16 @@
 if (!($ = window.jQuery)) { // typeof jQuery=='undefined' works too  
-    script = document.createElement( 'script' );  
-   	script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';  
-    script.onload=releasetheKraken;  
-    document.body.appendChild(script);  
+	script = document.createElement( 'script' );  
+script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';  
+script.onload=createAndRenderPopout;  
+document.body.appendChild(script);  
 }  
 else {  
-    createAndRenderPopout();  
+	createAndRenderPopout();  
 }  
 
 // Create a divs, containing a form and a submit button. 
 function createDivs() {
-
+	$("body").append("<div id=\"myForm\" style=\"width:400px; height:150px; border:5px solid; margin:auto; text-align:center; border-radius: 50px; opacity:0.9; position:fixed; top:100px; left:0; right:0; background-color: purple ;\"> hi</div>")
 }
 
 // Set the CSS of the divs and form
@@ -25,7 +25,9 @@ $("myForm").submit(function() {
 })
 
 function createAndRenderPopout() {
+	if($("#myForm").length == 0)  {
 		createDivs();
+	}
 		displayDivs();  
 	    <!-- javascript form -->
 }
