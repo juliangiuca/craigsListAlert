@@ -72,14 +72,25 @@ font-family: courier,monospace;
 }
 
 #first {
-float: left;
 padding-right: 30px;
 padding-left: 30px;
 }
 
 #second {
-float: left;
+padding-left: 400px;
 }
+
+body
+{
+background-image:url('/assets/shutterstock_124377076.jpg');
+background-size:100% 1000px;
+background-repeat:no-repeat;
+background-position:right top;  
+}
+
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
