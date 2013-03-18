@@ -1,11 +1,14 @@
 class CriteriasController < ApplicationController
 
+	skip_before_filter :verify_authenticity_token, :only => :create
+
 	def new
 		@criteria = Criteria.new
 	end
 
 
 	def create 
+		puts "hey"
 		@criteria = current_user.criterias.create(params[:criteria]) #create is a saved method
 		redirect_to(:action => "index")
 

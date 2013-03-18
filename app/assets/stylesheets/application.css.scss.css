@@ -90,7 +90,7 @@ height: 10px;
 body
 {
 background-image:url('/assets/shutterstock_edit.jpg');
-background-size:100% 1000px;
+background-size:100%;
 background-repeat:no-repeat;
 background-position:right top;  
 }
