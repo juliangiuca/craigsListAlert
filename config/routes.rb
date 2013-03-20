@@ -16,7 +16,7 @@ CraigsListAlert::Application.routes.draw do
   #   delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
   # end
   
-  root :to => "criterias#index"
+  # root :to => "criterias#index"
 
   #devise_for :user do
     #root :to => 'devise/sessions#new'

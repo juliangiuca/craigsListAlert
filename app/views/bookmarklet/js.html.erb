@@ -20,7 +20,6 @@ $("#myForm").submit(function() {
 	//$.post(url, $(this).serialize(), function() {
 	// 	
 	// })
-
 $.ajax({
 	type: "POST",
 	beforeSend: function(xhr) {
@@ -34,6 +33,7 @@ $.ajax({
 		console.log(data);
 	},
 	data: $(this).serialize(),
+	dataType: "JSON",
 });
 	// trigger via AJAX HERE!
 	// then close / hide the pop out on success
@@ -53,5 +53,5 @@ function createAndRenderPopout() {
 		createDivs();
 	}
 		// displayDivs();  
-	    <!-- javascript form -->
+	    
 }
