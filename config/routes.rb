@@ -6,6 +6,7 @@ CraigsListAlert::Application.routes.draw do
 
   resources :items
   resources :criterias
+  match '/c/bookmarklet' => 'criterias#create_via_script', :as => "create_user_bookmarklet"
 
   match 'bookmarklet/js' => 'bookmarklet#js'
 
@@ -16,7 +17,7 @@ CraigsListAlert::Application.routes.draw do
   #   delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
   # end
   
-  # root :to => "criterias#index"
+   root :to => "criterias#index"
 
   #devise_for :user do
     #root :to => 'devise/sessions#new'

@@ -11,47 +11,35 @@ else {
 
 // Create a divs, containing a form and a submit button. 
 function createDivs() {
-	return $("body").append("<form id=\"myForm\" action=\"http://localhost:3000/criterias\" method=\"post\" style=\"width:400px; height:100px; padding:20px; font-family: courier,monospace; border:5px solid; margin:auto; text-align:center; border-radius: 50px; opacity:1; position:fixed; top:100px; left:0; right:0; z-index: 1; background-color: #FFFF66\"> Save this search! <br></br> Title Your Search: <input type=\"text\" name=\"title\"><br></br><input type=\"hidden\" name=\"url\" value=\""+window.location.href+"\"><input type=\"submit\" value=\"Save\"><input type=\"hidden\" name=\"authenticity_token\" value=\"<%= form_authenticity_token %>\"></form>")
+return $("body").append("<form id=\"myForm\" action=\"<%= create_user_bookmarklet_url %>\" method=\"post\" style=\"width:400px; height:100px; padding:20px; font-family: courier,monospace; border:5px solid; margin:auto; text-align:center; border-radius: 50px; opacity:1; position:fixed; top:100px; left:0; right:0; z-index: 1; background-color: #FFFF66\"> Save this search! <br></br> Title Your Search: <input type=\"text\" name=\"title\"><br></br><input type=\"hidden\" name=\"url\" value=\""+window.location.href+"\"><input type=\"submit\" value=\"Save\"><input type=\"hidden\" name=\"authenticity_token\" value=\"<%= form_authenticity_token %>\"></form>")
 }
 
 //AJAX post form
 $("#myForm").submit(function() {
-	var url = $(this).attr("action");
-	//$.post(url, $(this).serialize(), function() {
-	// 	
-	// })
-$.ajax({
-	type: "POST",
-	beforeSend: function(xhr) {
-		xhr.setRequestHeader('X-CSRF-Token', "<%= form_authenticity_token %>");
-	},
-	url: url,
-	xhrFields: {withCredentials: true},
-	success: function(data){
-		success = true;
-		$("#myForm").hide();
-		console.log(data);
-	},
-	data: $(this).serialize(),
-	dataType: "JSON",
-});
-	// trigger via AJAX HERE!
-	// then close / hide the pop out on success
-	//
-	// Your ID names aren't very unique. You risk having an ID collision with someones website.
-	// Maybe use more unique names?
-	//
-	// You want to use $(this).attr("action") to get the url of the form
-	// in this case, "this" is the form that was just posted
+
+  var url = $(this).attr("action")
+  var sendCraigslistItem = $("<script></script>")
+  .attr("src", url + "?" + $(this).serialize())
+  .attr("async", "true")
+  .attr("id", "postToCLScraper");
+
+  $("body").append(sendCraigslistItem)
+  setTimeout("closePopOut()", 100);
+
 	return false;
-
-
 })
 
-function createAndRenderPopout() {
-	if($("#myForm").length == 0)  {
-		createDivs();
+function closePopOut() {
+	if($("#myForm").length != 0)  {
+    $("#myForm").detach()
 	}
-		// displayDivs();  
-	    
+
+  if ($("#postToCLScraper").length != 0)  {
+    $("#postToCLScraper").detach()
+  }
+}
+
+function createAndRenderPopout() {
+  closePopOut()
+  createDivs();
 }
