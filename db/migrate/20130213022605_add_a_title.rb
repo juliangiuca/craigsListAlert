@@ -1,6 +1,6 @@
 class AddATitle < ActiveRecord::Migration
 
 	def change
-    add_column :criterias, :title, :string
+    add_column :criteria, :title, :string
   end
 end
